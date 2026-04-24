@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Lumin</title>
+    <meta name="description" content="Privacy Policy for Lumin, the Shopify app that makes your store discoverable to AI search engines.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --text-primary: #e8e8ec;
+            --text-secondary: #9a9aaa;
+            --text-muted: #6a6a7a;
+            --gradient-start: #a855f7;
+            --gradient-mid: #e040a0;
+            --gradient-end: #f59e0b;
+            --accent: #c77dff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(168, 85, 247, 0.08) 0%, rgba(224, 64, 160, 0.04) 40%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 56px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .logo-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 32px;
+        }
+
+        .page-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(28px, 5vw, 38px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Content sections */
+        .intro {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .intro a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 3px;
+            border-radius: 3px;
+            background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .data-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .data-list li {
+            position: relative;
+            padding: 10px 16px 10px 28px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .data-list li:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .data-list li::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gradient-mid);
+            opacity: 0.7;
+        }
+
+        /* Info card for "what we don't collect" */
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        /* Webhook list */
+        .webhook-item {
+            margin-bottom: 16px;
+        }
+
+        .webhook-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .contact-section .section-title::before {
+            display: none;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .contact-email:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            .page-wrapper {
+                padding: 40px 20px 80px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+                padding-bottom: 36px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            .contact-section {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <header class="header">
+        <div class="logo-mark">
+            <!-- Replace src with your hosted logo URL -->
+            <img src="logo.png" alt="Lumin logo">
+        </div>
+        <div class="brand-name">Lumin</div>
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="last-updated">Last updated: April 23, 2026</p>
+    </header>
+
+    <p class="intro">
+        Lumin ("we", "our", "us") is a Shopify application that helps merchants optimize their stores for AI search engine discoverability. This privacy policy explains what data we collect, how we use it, and your rights regarding that data.
+    </p>
+
+    <!-- What data we collect -->
+    <section class="section">
+        <h2 class="section-title">What data we collect</h2>
+        <p>Lumin accesses the following store data through Shopify's API to provide its services:</p>
+        <ul class="data-list">
+            <li>Store information (name, domain, contact email, currency)</li>
+            <li>Product titles, descriptions, handles, prices, and tags</li>
+            <li>Collection titles, descriptions, and handles</li>
+            <li>Page titles and handles</li>
+            <li>Blog post titles and handles</li>
+            <li>Theme information (for schema markup injection)</li>
+        </ul>
+        <p>We store your store domain, plan status, generated llms.txt content, schema markup settings, and crawler scan results in our database.</p>
+    </section>
+
+    <!-- What data we do not collect -->
+    <section class="section">
+        <h2 class="section-title">What data we do not collect</h2>
+        <div class="info-card">
+            <p>Lumin does not collect, store, or process any customer data, personal data, or personally identifiable information (PII) from your store's customers. We do not access orders, customer accounts, payment information, browsing behavior, or any checkout data.</p>
+        </div>
+    </section>
+
+    <!-- How we use your data -->
+    <section class="section">
+        <h2 class="section-title">How we use your data</h2>
+        <p>We use the data we collect solely to provide Lumin's services:</p>
+        <ul class="data-list">
+            <li>Generating llms.txt files that describe your store to AI search engines</li>
+            <li>Configuring JSON-LD schema markup on your storefront</li>
+            <li>Scanning AI crawler accessibility for your store</li>
+            <li>Calculating your AI Readiness Score</li>
+            <li>Processing billing through Shopify's Billing API</li>
+        </ul>
+    </section>
+
+    <!-- Data storage and security -->
+    <section class="section">
+        <h2 class="section-title">Data storage and security</h2>
+        <p>Your data is stored on secure servers hosted by Fly.io with PostgreSQL databases. All data is transmitted over HTTPS. We do not sell, share, or transfer your data to any third parties.</p>
+    </section>
+
+    <!-- Data retention -->
+    <section class="section">
+        <h2 class="section-title">Data retention</h2>
+        <p>We retain your store data for as long as the app is installed. If you uninstall Lumin, we receive a notification from Shopify and delete your store data within 48 hours of receiving a shop redaction request.</p>
+    </section>
+
+    <!-- Shopify compliance webhooks -->
+    <section class="section">
+        <h2 class="section-title">Shopify compliance webhooks</h2>
+        <p>Lumin responds to all mandatory Shopify compliance webhooks:</p>
+        <div class="info-card">
+            <p class="webhook-item"><strong>Customer data request:</strong> Since we do not store customer data, we acknowledge these requests and confirm no customer data is held.</p>
+            <p class="webhook-item"><strong>Customer data erasure:</strong> Since we do not store customer data, no action is required beyond acknowledgment.</p>
+            <p class="webhook-item" style="margin-bottom:0"><strong>Shop data erasure:</strong> Upon receiving this request, we delete all store data associated with your shop from our database.</p>
+        </div>
+    </section>
+
+    <!-- Your rights -->
+    <section class="section">
+        <h2 class="section-title">Your rights</h2>
+        <p>You have the right to request access to, correction of, or deletion of any data we hold about your store. You can exercise these rights by contacting us at the email address below.</p>
+        <p>If you are located in the European Economic Area, you have additional rights under GDPR, including the right to data portability, the right to restrict processing, and the right to object to processing.</p>
+    </section>
+
+    <!-- Third-party services -->
+    <section class="section">
+        <h2 class="section-title">Third-party services</h2>
+        <p>Lumin uses the following third-party services:</p>
+        <ul class="data-list">
+            <li>Shopify API for accessing store data and processing billing</li>
+            <li>Fly.io for application hosting</li>
+            <li>PostgreSQL for data storage</li>
+        </ul>
+    </section>
+
+    <!-- Changes to this policy -->
+    <section class="section">
+        <h2 class="section-title">Changes to this policy</h2>
+        <p>We may update this privacy policy from time to time. We will notify merchants of any material changes through the app or via email.</p>
+    </section>
+
+    <!-- Contact -->
+    <div class="contact-section">
+        <h2 class="section-title">Contact us</h2>
+        <p>If you have any questions about this privacy policy or our data practices, please reach out.</p>
+        <a href="mailto:support@tambourineai.com" class="contact-email">support@tambourineai.com</a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Lumin. All rights reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
